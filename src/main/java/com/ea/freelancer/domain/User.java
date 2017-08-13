@@ -20,9 +20,6 @@ import javax.persistence.OneToOne;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4000001339191618295L;
 
 	@Id

@@ -9,9 +9,6 @@ import javax.persistence.Id;
 @Entity
 public class Status implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6613657980527314974L;
 
 	@Id
