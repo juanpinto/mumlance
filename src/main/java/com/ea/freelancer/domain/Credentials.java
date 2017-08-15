@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.ea.freelancer.domain.Authority;
+
 @Entity
 public class Credentials implements Serializable {
 
@@ -29,6 +31,18 @@ public class Credentials implements Serializable {
 
 	@OneToOne(mappedBy = "credentials", fetch = FetchType.EAGER)
 	private User user;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "credentials")
+	private Authority authority;
+
+	public Authority getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(Authority authority) {
+		this.authority = authority;
+	}
 
 	public User getUser() {
 		return user;
