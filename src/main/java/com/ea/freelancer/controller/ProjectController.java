@@ -25,6 +25,8 @@ import com.ea.freelancer.domain.Skills;
 import com.ea.freelancer.domain.Skills.SkillTitle;
 import com.ea.freelancer.domain.Status;
 import com.ea.freelancer.domain.Status.ProjectStatus;
+import com.ea.freelancer.dto.ProjectApplyDTO;
+import com.ea.freelancer.dto.ProjectSearchDTO;
 import com.ea.freelancer.repository.EmployerRepository;
 import com.ea.freelancer.repository.ProjectRepository;
 import com.ea.freelancer.sender.MessageSender;
@@ -142,7 +144,7 @@ public class ProjectController {
 
 
 	@RequestMapping(value = "/filterSearch", method = RequestMethod.POST)
-	public String filterSearch(Model model,
+	public String filterSearch(Model model, @ModelAttribute("projectSearch") ProjectSearchDTO projectSearchDTO,
 			Principal principal) {
 		Freelancer freelancer = userService.findFreelancerByUserName(principal.getName());
 
